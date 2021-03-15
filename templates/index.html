@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+    }
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif;
+    }
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Atlanta Crime</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- <link rel="{{ url_for('static', filename='css/style.css') }}"></link> -->
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+        <a
+          class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+          href="javascript:void(0);"
+          onclick="myFunction()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a href="/index" class="w3-bar-item w3-button w3-padding-large w3-white"
+          >Home</a
+        >
+        <a
+          href="/neighborhood"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Neighborhood</a
+        >
+        <a
+          href="/typesofcrimes"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Types of Crime</a
+        >
+        <a
+          href="/timeofyear"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Time Of Year</a
+        >
+      
+        <a
+          href="/contactinfo"
+          class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          >Contact Information</a
+        >
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="w3-container w3-blue w3-center" style="padding: 128px 16px">
+      <h1 class="w3-margin w3-jumbo">Atlanta Crime</h1>
+      <p class="w3-xlarge">An Analysis from 2009-2019</p>
+      <!-- <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button> -->
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+      <div class="w3-content">
+        <div class="w3-third">
+          <h1>Atlanta Crime Heat Map</h1>
+          <h5 class="w3-padding-32">
+            The following heatmap is generated using Tableau.
+          </h5>
+
+          <p class="w3-text-grey">
+            The majority of reported crime from the Atlanta PD can be seen to
+            focus around the downtown area. Using Tableau, the visualization 
+            incorporates over 350,000 crime reports from 2009 to 2020. It 
+            is filterable by year in order to see the location of crime change over time.
+          </p>
+          <p class="w3-text-grey">
+            Below, a table has been created out of a Pandas DataFrame by
+            converting it to html and iterating through the rows.
+          </p>
+        </div>
+        <!--This is where heatmap is input  -->
+        <div class="w3-twothird">
+<div class='tableauPlaceholder' id='viz1615333838708' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;cr&#47;crimeanalysis_16152192857740&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='crimeanalysis_16152192857740&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;cr&#47;crimeanalysis_16152192857740&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615333838708');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>        </div>
+      </div>
+    </div>
+
+    <!-- Second Grid -->
+    <!-- <div class="w3-center">
+      <div class="page">
+        <h1>Table</h1>
+        {% for table in tables %}
+        <h2>{{titles[loop.index]}}</h2>
+        {{ table|safe }} {% endfor %}
+      </div>
+    </div> -->
+
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+      <h1 class="w3-margin w3-xlarge">Georgia Tech Boot Camp 2021</h1>
+    </div>
+    <!-- <div id="map" style="width:840px; height: 400px;"> -->
+    <!-- <div
+      id="map"
+      style="width: 840px; height: 400px; margin-left: auto; margin-right: auto"
+    ></div> -->
+
+    <!-- <div class="page">
+      <h1>Table</h1>
+      {% for table in tables %}
+      <h2>{{titles[loop.index]}}</h2>
+      {{ table|safe }} {% endfor %}
+    </div>
+<!--Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+      <div class="w3-xlarge w3-padding-32">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </div>
+      <p>
+        Powered by
+        <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+          >w3.css</a
+        >
+      </p>
+    </footer>
+    <!-- API key -->
+    <!-- <script type="text/javascript" src="static/js/config.js"></script> -->
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='data/data.csv') }}"></script> -->
+
+    <!-- Leaflet JS -->
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!-- D3 CDN -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- JS -->
+    <!-- <script type="text/javascript" src="static/js/just-crime.js"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/just-crime.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="static/js/heatmap.js"></script> -->
+    <script src="{{ url_for('static', filename='js/heatmap.js') }}"></script>
+
+    <!-- Leaflet heatmap plugin-->
+    <script src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>
+    <!-- <script type="text/javascript" src="static/js/leaflet-heat.js"></script> -->
+  </body>
+</html>
